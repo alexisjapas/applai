@@ -78,11 +78,13 @@ input {
     justify-content: center;
     flex-wrap: wrap;
     gap: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .application {
-    width: 250px;
-    height: 500px;
+    width: 260px;
+    height: 510px;
     text-align: center;
     border: solid;
     border-radius: 4px;
@@ -90,6 +92,8 @@ input {
     display: flex;
     flex-direction: column;
     transition: padding 0.5s;
+    box-sizing: border-box;
+    
 }
 
 .application:hover {
@@ -280,13 +284,14 @@ textarea {
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.5s;
+    transition: 0.3s;
     background-size: 200% auto;
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     display: block;
     border: none;
+    box-sizing: border-box;
   }
 
   .btn-download:hover {
@@ -294,11 +299,22 @@ textarea {
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+    padding: 17px 47px;
+  }
+
+  .div-btn-download{
+    box-sizing: border-box;
+    height: 82px; /* Calculé comme 48px de padding + 30px de contenu */
+    width: 304px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: left;
   }
 
            
   .btn-user-data {
-    background-image: linear-gradient(to right, #4b6cb7 0%, #182848  51%, #4b6cb7  100%);
+    background-image: linear-gradient(to right, #181616 0%, #000000  51%, #2e2e2d  100%);
     margin: 10px;
     margin-bottom: 30px;
     padding: 15px 45px;
@@ -311,6 +327,8 @@ textarea {
     border-radius: 10px;
     display: block;
     border: none;
+    transition: padding 0.3s ease;
+    box-sizing: border-box;
   }
 
   .btn-user-data:hover {
@@ -318,6 +336,18 @@ textarea {
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+    padding: 17px 47px;
   }
+
+  .div-btn-user-data{
+    box-sizing: border-box;
+    height: 82px; /* Calculé comme 48px de padding + 30px de contenu */
+    width: 304px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
  
  
