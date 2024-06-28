@@ -41,9 +41,9 @@ ApplAI is a local webapp which allows you to generate a specific cover letter an
     - Fields on the left and preview on the right
     - Set max-size for the preview
 - Footer with our names, copyrights, github link
+- Buttons "delete", "run again" on the application (vertical dots menu selector aside close button)
 
 ### Beta
-- Buttons "delete", "run again" on the application (vertical dots menu selector aside close button)
 - Add CV support
 - If the URL has yet been applied, propose to run a new generation (keep all versions)
 - Optimize prompts & reduce calls
