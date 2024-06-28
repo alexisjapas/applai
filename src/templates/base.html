@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ApplAI</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div id="loading_screen">Work in progress</div>
+
+
+    <div id="application-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2 id="application-title" class="popup-title"></h2>
+            <div id="popup-body">
+                <button class="btn-download" id="download-application">Download Application</button>
+                <div class="popup-left">
+                    <p id="application-company"></p>
+                    <form id="application_content_form" action="/application" method="POST">
+                        <textarea id="application-recruiters" name="application-recruiters"></textarea>
+                        <textarea id="application-cover_letter" name="application-cover_letter"></textarea>
+                    </form>
+                </div>
+                <div class="popup-right">
+                    <img id="popup-application-img" src="" alt="Cover Letter Preview">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% block header %}{% endblock %}
+
+    <div id="main">
+        {% block application %}{% endblock %}
+        {% block user_data %}{% endblock %}
+    </div>
+
+    <script type="module" src="{{ url_for('static', filename='js/popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/applicationGenerationWaitingScreen.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/selectSubmit.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/handleUserDataForm.js') }}"></script>
+</body>
+
+</html>

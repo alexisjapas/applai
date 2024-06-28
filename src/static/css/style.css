@@ -1,0 +1,323 @@
+/* GLOBAL STYLES */
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+h2 {
+    text-align: center;
+    font-variant: small-caps;
+    margin: 0 0 10px 0;
+}
+
+input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    width: 100%;
+}
+
+/*  APPLICATIONS STYLES */
+
+#main {
+    display: flex;
+    gap: 8px;
+    background-color: #ffffff;
+    margin-top: 41px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#loading_screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 2;
+    visibility: hidden;
+}
+
+#user_data {
+    max-width: 500px;
+    flex: 33%;
+    padding: 8px 0 8px 0;
+}
+#user_data section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.input_container {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+.input_container input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+#imexport {
+    display: flex;
+    justify-content: space-around;
+}
+
+#applications {
+    flex: 67%;
+    padding: 8px 8px 8px 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.application {
+    width: 250px;
+    height: 500px;
+    text-align: center;
+    border: solid;
+    border-radius: 4px;
+    border-width: 0.3px;
+    display: flex;
+    flex-direction: column;
+    transition: padding 0.5s;
+}
+
+.application:hover {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.application_company {
+    text-decoration: bold;
+    font-size: 0.9em;
+}
+
+.application_title {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+#apply_button {
+    width: fit-content;
+    border-radius: 0;
+}
+
+textarea {
+    border-radius: 4px;
+    padding: 1px;
+    resize: none;
+    overflow-y: hidden;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+#apply_form {
+    display: flex;
+    justify-content: space-around;
+    width: 94%;
+    height: 28px;
+}
+
+#apply_form input[type="url"] {
+    flex: 1 1 auto;
+    /* Allow the input to grow and shrink */
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+    padding-left: 4px;
+    text-align: center;
+}
+
+#apply_form input[type="submit"] {
+    display: inline-block;
+    border-right: 0;
+    padding: 0 0 0 8px;
+    text-align: center;
+}
+
+/*  HEADER STYLES */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 0 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+#header_logo {
+    height: 67%;
+}
+
+#apply {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 6px;
+}
+
+#form_model_selection {
+    margin: 0;
+    padding: 0;
+}
+
+#model_select,
+#language_select {
+    appearance: none;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-left: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+#model_select {
+    border-radius: 0;
+    border-right: 0;
+}
+
+#language_select {
+    border-radius: 0 4px 4px 0;
+    padding-right: 4px;
+}
+
+
+/* POPUPS */
+/* Add these styles in your css/style.css file */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1800px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: popup-appear 0.3s ease-out;
+}
+
+@keyframes popup-appear {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-title {
+    text-align: center;
+}
+
+.popup-body {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.popup-left {
+    flex: 1;
+}
+
+.popup-right {
+    flex: 1;
+}
+
+#application-cover-letter {
+    width: 100%;
+    height: 200px;
+}
+
+/* Blurred background effect */
+.blur-background {
+    filter: blur(5px); /* Adjust blur intensity */
+    transition: filter 0.3s;
+}
+
+         
+.btn-download {
+    background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+  }
+
+  .btn-download:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+           
+  .btn-user-data {
+    background-image: linear-gradient(to right, #4b6cb7 0%, #182848  51%, #4b6cb7  100%);
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+  }
+
+  .btn-user-data:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+ 

@@ -1,0 +1,108 @@
+{
+    "details": {
+        "first_name": "Manuel",
+        "surname": "Ito",
+        "gender": "male",
+        "birth_date": "17/11/1996",
+        "email": "manuel.ito@pm.me",
+        "phone": "0102030405",
+        "websites": [
+            "linkedin.com/in/manuel-ito",
+            "github.com/manuelito"
+        ],
+        "title": "Applied Mathematics Engineer",
+        "summary": "Graduated in October 2023, I am seeking a PhD position starting in 2024. My particular interests lies in algorithms, modeling and simulation, with a strong inclination in machine learning methods and environmental preservation."
+    },
+    "skills": {
+        "programming": [
+            "Python (PyTorch)",
+            "C/C++",
+            "MATLAB",
+            "Scala",
+            "Bash"
+        ],
+        "operating_systems": [
+            "GNU/Linux (NixOS, Arch, Fedora, Ubuntu)",
+            "Windows"
+        ],
+        "DevOps": [
+            "Git",
+            "Github",
+            "Docker",
+            "Nix"
+        ],
+        "Documentation": [
+            "Typst",
+            "LaTeX"
+        ]
+    },
+    "miscellaneous": [
+        "Treasurer of the student association MANUELITOS",
+        "President of the Applied Physics DUT students association"
+    ],
+    "professional_experiences": [
+        {
+            "position": "Engineer apprentice - Image processing",
+            "date": "2020-2023",
+            "location": "Éragny",
+            "company": "Safran Electronics & Defense",
+            "missions": [
+                "R&T (PyTorch) - Neural network for correcting thermal camera image",
+                "R&D (MATLAB) - Algorithmic study of thermal camera image correction",
+                "Dev (Python) - Software for 2-axis turret communication, motion simulation and graphical user interface"
+            ]
+        },
+        {
+            "position": "Engineer trainee - Data processing",
+            "date": "2022",
+            "location": "Milan, Italy",
+            "company": "Politecnico di Milano",
+            "missions": [
+                "Dev (Python) - Algorithm for segmenting cancer cell vesicles from light microscopy images"
+            ]
+        },
+        {
+            "position": "Technician trainee - Android development",
+            "date": "2019",
+            "location": "Prades-le-Lez",
+            "company": "EEAP Coste-Rousse",
+            "missions": [
+                "Dev (Android/Java) - Voice synthesis to improve exchanges for young people with multiple disabilities"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "title": "Engineering cycle - Applied mathematics",
+            "date": "2020-2023",
+            "location": "Cergy",
+            "institution": "CYTech | CY Cergy Paris Université (ex-EISTI)",
+            "path": "Mathematics & computer science path",
+            "specialization": "Artificial Intelligence"
+        },
+        {
+            "title": "CPGE ATS - Engineering sciences",
+            "date": "2019-2020",
+            "location": "Grenoble",
+            "institution": "Lycée André Argouges",
+            "path": "",
+            "specialization": ""
+        },
+        {
+            "title": "DUT - Computer science",
+            "date": "2018-2019",
+            "location": "Grenoble",
+            "institution": "Université Grenoble Alpes",
+            "path": "",
+            "specialization": ""
+        },
+        {
+            "title": "DUT - Applied physics",
+            "date": "2015-2018",
+            "location": "Grenoble",
+            "institution": "Université Grenoble Alpes",
+            "path": "",
+            "specialization": ""
+        }
+    ]
+}
