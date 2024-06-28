@@ -36,7 +36,10 @@ ApplAI is a local webapp which allows you to generate a specific cover letter an
 - Application tiles smaller
 - Extra inputs/textareas shall be invisible at start
 - A section shall be invisible if empty (all sections appears if the mouse is over #user_data div)
-- Application popup: fields on the left and preview on the right
+- Hide import/export buttons while not hovering userdata section
+- Application popup:
+    - Fields on the left and preview on the right
+    - Set max-size for the preview
 - Footer with our names, copyrights, github link
 
 ### Beta
