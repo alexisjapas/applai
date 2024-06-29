@@ -33,12 +33,15 @@
 {% block application %}
 <div class="main_div" id="applications">
     {% for application in applications %}
-    <div class="application" id="application-{{ application.id }}">
-        <img id="img-app-{{ application.id }}" class="application_img"
-            src="{{ url_for('static', filename='applications/1/' ~ application.id ~ '/cover_letter.svg') }}">
-        <span class="application_company">{{ application.company }}</span>
-        <br />
-        <span class="application_title">{{ application.job_title }}</span>
+    <div class="application-div">
+            <div class="details-btn-app-div"><span>...</span></div>
+            <div class="application" id="application-{{ application.id }}">
+                <img id="img-app-{{ application.id }}" class="application_img"
+                    src="{{ url_for('static', filename='applications/1/' ~ application.id ~ '/cover_letter.svg') }}">
+                <span class="application_company">{{ application.company }}</span>
+                <br />
+                <span class="application_title">{{ application.job_title }}</span>
+            </div>
     </div>
     {% endfor %}
 </div>
