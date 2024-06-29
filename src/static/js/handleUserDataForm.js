@@ -12,21 +12,52 @@ const sections = [
 // Add event listeners to existing form fields
 mapFormFieldsToDatabase();
 hideDetailsSectionInputsIfEmpty();
+setUpTextareas();
+hideExtraInputs();
+//setUpSectionsMaxHeights();
 
-// Set up autoresize on textareas
-const textareas = document.querySelectorAll('textarea');
-textareas.forEach(textarea => {
-    textarea.removeEventListener('input', resizeTextarea);
-    resizeTextarea(textarea);
-});
+/*
+function setUpSectionsMaxHeights() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+        let sectionMaxHeight = 0;
+        (section.childNodes).forEach((child) => {
+            if (child.offsetHeight != undefined) {
+                sectionMaxHeight += child.scrollHeight
+            }
+        })
+        sectionMaxHeight += 40
+        section.style.maxHeight = `${sectionMaxHeight}px`;
+        console.log(section.id + "  " + sectionMaxHeight)
+    })
+}
+    */
+
+// Hide extra inputs when the page is loaded
+function hideExtraInputs() {
+    const fields = document.querySelectorAll('#user_data_form input, #user_data_form textarea');
+    fields.forEach(field => {
+        if (field.id.includes("extra_input")) {field.style.display="none"}
+    });
+}
+
 
 sections.forEach((section) => {
     let sectionId = `${section}-section`
     let extraInputId = `${section}-extra_input`
-    console.log(sectionId + " " + extraInputId)
     removeInputIfEmptyListener(document.getElementById(sectionId))
     handleExtraInputChanges(document.getElementById(sectionId), extraInputId);
 })
+
+// Set up autoresize on textareas
+function setUpTextareas() {
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(textarea => {
+        textarea.removeEventListener('input', resizeTextarea);
+        resizeTextarea(textarea);
+    });
+}
+
 
 
 function submitUserDataForm() {
@@ -121,15 +152,17 @@ function handleExtraInputChanges(section, targetFieldId) {
                 if (targetField.tagName == "INPUT") {
                     newTargetableField = document.createElement('input')
                     newTargetableField.setAttribute("type", "text")
-                    newTargetableField.setAttribute("maxlenght", "255")
+                    newTargetableField.setAttribute("maxlength", "255")
                 } else if (targetField.tagName == "TEXTAREA") {
                     newTargetableField = document.createElement('textarea')
-                    newTargetableField.setAttribute("maxlenght", "2000")
-                    resizeTextarea(newTargetableField)
+                    newTargetableField.setAttribute("maxlength", "2000")
+                    setUpTextareas()
                 }
+                newTargetableField.className = 'user_data_form_input'
                 newTargetableField.setAttribute("id", targetFieldId)
                 newTargetableField.setAttribute("name", targetFieldId)
                 mapFormFieldsToDatabase()
+                removeInputIfEmptyListener(section)
                 section.appendChild(newTargetableField)
                 targetField.removeEventListener('keydown', handleKeydownInExtraInput);
                 section.removeEventListener("mouseleave", hideTargetFieldFunction)

@@ -59,28 +59,28 @@
     <form id="user_data_form" action="/user" method="POST">
         <section id="details-section">
             <h2>Details</h2>
-            <input type="text" name="first_name" id="first_name" value="{{ user.first_name }}" minlength="1"
+            <input class="user_data_form_input" type="text" name="first_name" id="first_name" value="{{ user.first_name }}" minlength="1"
                 maxlength="100" placeholder="First name">
 
-            <input type="text" name="surname" id="surname" value="{{ user.surname }}" minlength="1" maxlength="100"
+            <input class="user_data_form_input" type="text" name="surname" id="surname" value="{{ user.surname }}" minlength="1" maxlength="100"
                 placeholder="Surname">
 
-            <input type="email" id="email" name="email" value="{{ user.email }}" minlength="1" maxlength="255"
+            <input class="user_data_form_input" type="email" id="email" name="email" value="{{ user.email }}" minlength="1" maxlength="255"
                 placeholder="Email">
 
-            <input type="tel" id="phone_number" name="phone_number" value="{{ user.phone_number }}" minlength="1"
+            <input class="user_data_form_input" type="tel" id="phone_number" name="phone_number" value="{{ user.phone_number }}" minlength="1"
                 maxlength="20" placeholder="Phone number">
 
-            <input type="text" name="address" id="address" value="{{ user.address }}" minlength="1" maxlength="255"
+            <input class="user_data_form_input" type="text" name="address" id="address" value="{{ user.address }}" minlength="1" maxlength="255"
                 placeholder="Address">
 
-            <input type="text" name="city" id="city" value="{{ user.city }}" minlength="1" maxlength="255"
+            <input class="user_data_form_input" type="text" name="city" id="city" value="{{ user.city }}" minlength="1" maxlength="255"
                 placeholder="City">
 
-            <input type="integer" name="postal_code" id="postal_code" value="{{ user.postal_code }}" minlength="1"
+            <input class="user_data_form_input" type="integer" name="postal_code" id="postal_code" value="{{ user.postal_code }}" minlength="1"
                 maxlength="20" placeholder="Postal code">
 
-            <input type="text" name="country" id="country" value="{{ user.country }}" minlength="1" maxlength="255"
+            <input class="user_data_form_input" type="text" name="country" id="country" value="{{ user.country }}" minlength="1" maxlength="255"
                 placeholder="Country">
         </section>
 
@@ -93,9 +93,9 @@
             {% set ns.description = data.description %}
             {% endif %}
             {% endfor %}
-            <input type="text" name="title" id="title" value="{{ ns.title }}" minlength="1" maxlength="255"
+            <input class="user_data_form_input" type="text" name="title" id="title" value="{{ ns.title }}" minlength="1" maxlength="255"
                 placeholder="Title">
-            <textarea id="description" name="description" maxlength="2000">{{ ns.description }}</textarea>
+            <textarea class="user_data_form_input" id="description" name="description" maxlength="2000">{{ ns.description }}</textarea>
         </section>
 
         <section id="links-section">
@@ -103,12 +103,12 @@
             {% for data in user.data %}
             {% if data.language == selected_language %}
             {% for link in data.links %}
-            <input type="text" id="link-{{ loop.index }}" name="link-{{ loop.index }}" value="{{ link.link }}"
+            <input class="user_data_form_input" type="text" id="link-{{ loop.index }}" name="link-{{ loop.index }}" value="{{ link.link }}"
                 maxlength="255">
             {% endfor %}
             {% endif %}
             {% endfor %}
-            <input type="text" id="links-extra_input" name="links-extra_input" maxlength="255">
+            <input class="user_data_form_input" type="text" id="links-extra_input" name="links-extra_input" maxlength="255">
         </section>
 
         <section id="languages-section">
@@ -116,12 +116,12 @@
             {% for data in user.data %}
             {% if data.language == selected_language %}
             {% for language in data.languages %}
-            <input type="text" id="language-{{ loop.index }}" name="language-{{ loop.index }}"
+            <input class="user_data_form_input" type="text" id="language-{{ loop.index }}" name="language-{{ loop.index }}"
                 value="{{ language.language }}" maxlength="255">
             {% endfor %}
             {% endif %}
             {% endfor %}
-            <input type="text" id="languages-extra_input" name="languages-extra_input" maxlength="255">
+            <input class="user_data_form_input" type="text" id="languages-extra_input" name="languages-extra_input" maxlength="255">
         </section>
 
         <section id="additional_skills-section">
@@ -129,12 +129,12 @@
             {% for data in user.data %}
             {% if data.language == selected_language %}
             {% for additional_skill in data.additional_skills %}
-            <input type="text" id="additional_skill-{{ loop.index }}" name="additional_skill-{{ loop.index }}"
+            <input class="user_data_form_input" type="text" id="additional_skill-{{ loop.index }}" name="additional_skill-{{ loop.index }}"
                 value="{{ additional_skill.additional_skill }}" maxlength="255">
             {% endfor %}
             {% endif %}
             {% endfor %}
-            <input type="text" id="additional_skills-extra_input" name="additional_skills-extra_input" maxlength="255">
+            <input class="user_data_form_input" type="text" id="additional_skills-extra_input" name="additional_skills-extra_input" maxlength="255">
         </section>
 
         <section id="educations-section">
@@ -142,12 +142,12 @@
             {% for data in user.data %}
             {% if data.language == selected_language %}
             {% for education in data.educations %}
-            <textarea id="education-{{ loop.index }}" name="education-{{ loop.index }}"
+            <textarea class="user_data_form_input" id="education-{{ loop.index }}" name="education-{{ loop.index }}"
                 maxlength="2000">{{ education.education }}</textarea>
             {% endfor %}
             {% endif %}
             {% endfor %}
-            <textarea id="educations-extra_input" name="educations-extra_input" maxlength="2000"></textarea>
+            <textarea class="user_data_form_input" id="educations-extra_input" name="educations-extra_input" maxlength="2000"></textarea>
         </section>
 
         <section id="experiences-section">
@@ -155,12 +155,12 @@
             {% for data in user.data %}
             {% if data.language == selected_language %}
             {% for experience in data.experiences %}
-            <textarea id="experience-{{ loop.index }}" name="experience-{{ loop.index }}"
+            <textarea class="user_data_form_input" id="experience-{{ loop.index }}" name="experience-{{ loop.index }}"
                 maxlength="2000">{{ experience.experience }}</textarea>
             {% endfor %}
             {% endif %}
             {% endfor %}
-            <textarea id="experiences-extra_input" name="experiences-extra_input" maxlength="2000"></textarea>
+            <textarea class="user_data_form_input" id="experiences-extra_input" name="experiences-extra_input" maxlength="2000"></textarea>
         </section>
     </form>
 </div>

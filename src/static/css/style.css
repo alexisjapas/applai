@@ -1,9 +1,31 @@
 /* GLOBAL STYLES */
 
+@font-face {
+    font-family: 'SF';
+    src: url('../fonts/SF-Pro-Display-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFHeavy';
+    src: url('../fonts/SF-Pro-Display-Heavy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFMedium';
+    src: url('../fonts/SF-Pro-Display-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     margin: 0px;
     padding: 0px;
+
 }
 
 h2 {
@@ -18,7 +40,6 @@ input {
     padding: 1px;
     width: 100%;
 }
-
 /*  APPLICATIONS STYLES */
 
 #main {
@@ -56,6 +77,28 @@ input {
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
+    font-family: 'SFMedium', sans-serif;
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 15px;
+}
+.user_data_form_input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    font-family: 'SF', sans-serif;
+    background-color: #f1f1f1;
+}
+.user_data_form_input textarea{
+    height: 48px !important;
+}
+.user_data_form_input:hover{
+    background-color: #ffffff;
 }
 .input_container {
     display: flex;
@@ -80,6 +123,8 @@ input {
     gap: 8px;
     box-sizing: border-box;
     overflow: hidden;
+    font-family: 'SF', sans-serif;
+    font-size: 1.1em;
 }
 
 .application {
@@ -139,6 +184,7 @@ textarea {
     border-right: 0;
     padding-left: 4px;
     text-align: center;
+    font-family: 'SF', sans-serif;
 }
 
 #apply_form input[type="submit"] {
@@ -179,6 +225,18 @@ textarea {
 #form_model_selection {
     margin: 0;
     padding: 0;
+}
+
+#model_select{
+    font-family: 'SF', sans-serif;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#language_select{
+    font-family: 'SF', sans-serif;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #model_select,
@@ -251,6 +309,7 @@ textarea {
 
 .popup-title {
     text-align: center;
+    font-family: 'SFMedium', sans-serif;
 }
 
 .popup-body {
@@ -267,9 +326,16 @@ textarea {
     flex: 1;
 }
 
-#application-cover-letter {
+#application-cover_letter {
     width: 100%;
     height: 200px;
+    font-family: 'SF', sans-serif;
+    font-size: 1em;
+}
+
+#application-recruiters {
+    font-family: 'SF', sans-serif;
+    font-size: 1.2em;
 }
 
 /* Blurred background effect */
@@ -292,6 +358,7 @@ textarea {
     display: block;
     border: none;
     box-sizing: border-box;
+    font-family: 'SF', sans-serif;
   }
 
   .btn-download:hover {
@@ -329,6 +396,7 @@ textarea {
     border: none;
     transition: padding 0.3s ease;
     box-sizing: border-box;
+    font-family: 'SF', sans-serif;
   }
 
   .btn-user-data:hover {
