@@ -32,7 +32,6 @@ ApplAI is a local webapp which allows you to generate a specific cover letter an
 
 ### Alpha
 - Docker
-- Language/model selects width should be dynamic
 - Application tiles smaller
 - Extra inputs/textareas shall be invisible at start
 - A section shall be invisible if empty (all sections appears if the mouse is over #user_data div)
