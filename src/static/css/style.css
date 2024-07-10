@@ -119,6 +119,7 @@ input {
     padding: 8px 8px 8px 8px;
     display: flex;
     justify-content: center;
+    align-content: flex-start;
     flex-wrap: wrap;
     gap: 8px;
     box-sizing: border-box;

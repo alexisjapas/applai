@@ -73,7 +73,7 @@ def summarize_position_data(position_data: str, language:str, model: str) -> dic
 
     # AI summary
     preprompt = "If the information is not in the text, answer 'N/A'."
-    temperature = 0.0
+    temperature = 0.05
     position_dict = {
         "job_title": ollama_chat(
             preprompt=preprompt,
@@ -125,52 +125,57 @@ def summarize_position_data(position_data: str, language:str, model: str) -> dic
         ),
         "recruiters": ollama_chat(
             preprompt=preprompt,
-            prompt=f"List the names of the recruiters of the position in the provided data.",
+            prompt=f"List the names of the recruiters of the position in the provided data. Do not include any information about the recruiters, like email or phone number.",
             data=position_data,
             language=language,
             model=model,
             temperature=temperature,
         ),
-        "location": ollama_chat(
-            preprompt=preprompt,
-            prompt="Where is located the position in the provided data?",
-            data=position_data,
-            language=language,
-            model=model,
-            temperature=temperature,
-        ),
-        "contract_type": ollama_chat(
-            preprompt=preprompt,
-            prompt="What is the type of contract and if applicable, the duration, for the position in the provided data?",
-            data=position_data,
-            language=language,
-            model=model,
-            temperature=temperature,
-        ),
-        "start_date": ollama_chat(
-            preprompt=preprompt,
-            prompt="What is the start date for the position in the provided data?",
-            data=position_data,
-            language=language,
-            model=model,
-            temperature=temperature,
-        ),
-        "salary": ollama_chat(
-            preprompt=preprompt,
-            prompt="What is the salary for the position in the provided data?",
-            data=position_data,
-            language=language,
-            model=model,
-            temperature=temperature,
-        ),
-        "benefits": ollama_chat(
-            preprompt=preprompt,
-            prompt="If applicable, indicate benefits other than salary.",
-            data=position_data,
-            language=language,
-            model=model,
-            temperature=temperature,
-        ),
+        "location": "",
+        "contract_type": "",
+        "start_date": "",
+        "salary": "",
+        "benefits": "",
+        # "location": ollama_chat(
+        #     preprompt=preprompt,
+        #     prompt="Where is located the position in the provided data?",
+        #     data=position_data,
+        #     language=language,
+        #     model=model,
+        #     temperature=temperature,
+        # ),
+        # "contract_type": ollama_chat(
+        #     preprompt=preprompt,
+        #     prompt="What is the type of contract and if applicable, the duration, for the position in the provided data?",
+        #     data=position_data,
+        #     language=language,
+        #     model=model,
+        #     temperature=temperature,
+        # ),
+        # "start_date": ollama_chat(
+        #     preprompt=preprompt,
+        #     prompt="What is the start date for the position in the provided data?",
+        #     data=position_data,
+        #     language=language,
+        #     model=model,
+        #     temperature=temperature,
+        # ),
+        # "salary": ollama_chat(
+        #     preprompt=preprompt,
+        #     prompt="What is the salary for the position in the provided data?",
+        #     data=position_data,
+        #     language=language,
+        #     model=model,
+        #     temperature=temperature,
+        # ),
+        # "benefits": ollama_chat(
+        #     preprompt=preprompt,
+        #     prompt="If applicable, indicate benefits other than salary.",
+        #     data=position_data,
+        #     language=language,
+        #     model=model,
+        #     temperature=temperature,
+        # ),
     }
 
     return position_dict
@@ -211,8 +216,9 @@ def export_cover_letter(
     output_type: str,
 ) -> None:
     # Fill typst files
+    na_recruiters = "recruiters" if language == "english" else "recruteurs"
     recruiters = (
-        "recruiters"
+        na_recruiters
         if position_data["recruiters"] == "N/A"
         else position_data["recruiters"]
     )
@@ -226,9 +232,11 @@ def export_cover_letter(
     with open(os.path.join(CONTENT_PATH,"phone_number.typ"), "w", encoding="utf-8") as file:
         file.write(details["phone_number"])
     with open(os.path.join(CONTENT_PATH,"salutations.typ"), "w", encoding="utf-8") as file:
-        file.write(f"Dear {recruiters},")
+        file.write(f"{'Dear' if language == 'english' else 'Cher'} {recruiters},")
     with open(os.path.join(CONTENT_PATH,"content.typ"), "w", encoding="utf-8") as file:
         file.write(cover_letter_content)
+    with open(os.path.join(CONTENT_PATH,"greeting.typ"), "w", encoding="utf-8") as file:
+        file.write('Sincerely,' if language == 'english' else 'Cordialement,')
     # Compile file
     command = [
         "typst",

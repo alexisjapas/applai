@@ -12,7 +12,7 @@
 
 #v(1fr)
 
-#include "greeting.typ"
+#include "content/greeting.typ"
 
 #v(3fr)
 
